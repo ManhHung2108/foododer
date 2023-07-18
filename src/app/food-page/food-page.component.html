@@ -1,0 +1,18 @@
+<div class="container">
+    <img [src]="food.imageUrl" [alt]="food.name" />
+</div>
+<div class="detail">
+    <div class="header">
+        <span class="name">
+            {{ food.name }}
+        </span>
+        <span class="favorite {{ food.favorite ? '' : 'not' }}">♥</span>
+    </div>
+    <div class="start"></div>
+    <div class="origins">
+        <span *ngFor="let origin of food.origins">
+            {{origin}}
+        </span>
+    </div>
+</div>
+<!--Propertie binding [src]...-->
