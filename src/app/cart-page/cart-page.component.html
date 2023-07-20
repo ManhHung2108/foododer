@@ -1,1 +1,65 @@
-<p>cart-page works!</p>
+<!--Nếu cart là rỗng thì hiện app-not-found-->
+<app-not-found [visible]="!cart || cart.items.length <= 0" notFoundMessage="Cart Page Empty!"
+    resetLinkText="Go to Homepage!"></app-not-found>
+<!--Nếu có item trong cart thì mới cho hiện-->
+<div *ngIf="cart && cart.items.length>0" class="container">
+    <ul>
+        <li *ngFor="let cartItem of cart.items">
+            <div>
+                <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name" />
+            </div>
+            <div>
+                <a routerLink="/food/{{cartItem.food.id}}">{{cartItem.food.name}}</a>
+            </div>
+            <div>
+                <select #quantitySelect [ngModel]="cartItem.quantity"
+                    (change)="changQuantity(cartItem, quantitySelect.value)">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div>
+                {{cartItem.price | currency}}
+            </div>
+            <div>
+                <button class="remove-button" (click)="removeFromCart(cartItem)">Romve</button>
+            </div>
+        </li>
+    </ul>
+    <div class="checkout">
+        <div>
+            <div class="food-count">
+                <!-- {{cart.items.length}} -->
+                {{cart.totalFood}}
+            </div>
+            <div class="total-price">
+                {{cart.totalPrice | currency}}
+            </div>
+        </div>
+        <a routerLink="/checkout">Process to Checkout</a>
+    </div>
+</div>
+
+<!---[src], [alt]: propertie binding-->
+
+<!-- Cú pháp #quantitySelect cho phép bạn tạo một biến local có tên quantitySelect và liên kết nó với phần tử <select>. 
+Biến này sẽ có giá trị là tham chiếu đến phần tử <select> trong template, cho phép bạn truy cập và tương tác với các thuộc tính 
+và phương thức của phần tử đó từ code của component. -->
+
+<!-- [ ] (square brackets - binding syntax): Khi bạn sử dụng cú pháp [ ] trong Angular, bạn đang sử dụng "two-way binding" 
+(ràng buộc hai chiều) -->
+
+<!-- Không sử dụng [ ] (plain syntax): Khi không sử dụng cú pháp [ ], bạn chỉ đơn giản là truyền một giá trị cố định vào thuộc tính 
+của thành phần con. Điều này có nghĩa là giá trị được truyền vào là một giá trị hằng số và sẽ không thay đổi trong quá trình chạy 
+của ứng dụng. -->
+
+<!-- Khi bạn sử dụng two-way data binding (ràng buộc hai chiều) thông qua [ngModel] trong Angular với thẻ <select>, 
+giá trị được gán cho biến ngModel sẽ làm cho tùy chọn tương ứng trong thẻ <select> được chọn (selected) mặc định. -->
+
+<!-- Property binding cho phép cập nhật dữ liệu từ component xuống view khi giá trị của biến hoặc thuộc tính trong component thay đổi, 
+cũng giống như two-way binding. 
+    Sự khác biệt chính giữa property binding và two-way binding là two-way binding cũng cho phép cập nhật dữ liệu từ view lên component, 
+trong khi property binding chỉ thực hiện ràng buộc dữ liệu một chiều từ component xuống view. -->

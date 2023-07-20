@@ -23,8 +23,32 @@ a.logo {
 nav ul {
   list-style-type: none;
   margin: 0;
+  display: flex;
 }
+nav ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav ul li:hover {
+  background-color: #e72929;
+  color: white;
+}
+
 nav ul li a {
-  padding: 1em;
+  padding: 1rem 1rem 1rem 1rem;
   display: inline-block;
+}
+nav ul li span {
+  margin-left: 0.5rem;
+  width: 30px;
+  height: 30px;
+  background-color: #f55; /* Màu nền của hình tròn */
+  border-radius: 50%; /* Sử dụng border-radius để tạo hình tròn */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px; /* Kích thước chữ số */
+  color: #fff; /* Màu chữ số */
+  font-weight: bold; /* Độ đậm của chữ số */
 }

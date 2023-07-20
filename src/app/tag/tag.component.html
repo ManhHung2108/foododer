@@ -1,5 +1,8 @@
-<div *ngIf="tags">
-  <a *ngFor="let tag of tags" routerLink="/tag/{{ tag.name }}"
-    >{{ tag.name }}({{ tag.count }})</a
-  >
+<div *ngIf="tags" [style.justifyContent]="justifyContent">
+  <a *ngFor="let tag of tags" routerLink="/tag/{{ tag.name }}">{{ tag.name }}({{ tag.count }})</a>
 </div>
+<div *ngIf="foodPgaeTags" [style.justifyContent]="justifyContent">
+  <a *ngFor="let tagname of foodPgaeTags" routerLink="/tag/{{ tagname }}">{{ tagname }}</a>
+</div>
+
+<!--Nhận foodPageTags và justifyContent gán vào thuộc tính style của thẻ (nhận từ Parent gửi xuống)-->

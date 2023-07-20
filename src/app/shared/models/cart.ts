@@ -10,4 +10,12 @@ export class Cart {
     });
     return totalPrice;
   }
+
+  get totalFood(): number {
+    let totalFood = 0;
+    this.items.forEach((item) => {
+      totalFood += item.quantity; //get price bên lớp cartItem
+    });
+    return totalFood;
+  }
 }

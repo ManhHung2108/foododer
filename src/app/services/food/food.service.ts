@@ -35,13 +35,20 @@ export class FoodService {
 
   getAllTag(): Tag[] {
     return [
-      { name: 'All', count: 8 },
-      { name: 'FastFood', count: 4 },
-      { name: 'SlowFood', count: 2 },
-      { name: 'Lunch', count: 5 },
-      { name: 'Dinner', count: 1 },
-      { name: 'Breakfast', count: 2 },
+      { name: 'All', count: this.getAll().length },
+      { name: 'FastFood', count: this.getCountTag('FastFood') },
+      { name: 'SlowFood', count: this.getCountTag('SlowFood') },
+      { name: 'Lunch', count: this.getCountTag('Lunch') },
+      { name: 'Dinner', count: this.getCountTag('Dinner') },
+      { name: 'Breakfast', count: this.getCountTag('Breakfast') },
     ];
+  }
+
+  getCountTag(name: string): number {
+    let tagItems = this.getAll().filter((item) => {
+      return item.tags?.includes(name);
+    });
+    return tagItems.length;
   }
 
   getAll(): Food[] {
