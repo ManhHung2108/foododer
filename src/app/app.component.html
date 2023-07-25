@@ -1,2 +1,2 @@
-<app-header></app-header> <!--Mặc định là luôn có trên giao diện-->
+<app-header *ngIf="isMenuRequired"></app-header> <!--Mặc định là luôn có trên giao diện-->
 <router-outlet></router-outlet> <!----Home Components Load-->

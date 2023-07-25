@@ -1,0 +1,45 @@
+<mat-card>
+    <mat-card-header>
+        <h1>Đăng ký tài khoản</h1>
+    </mat-card-header>
+    <mat-card-content>
+        <form class="example-form" [formGroup]="registerForm" (ngSubmit)="proceedregisteration()">
+            <div class="container">
+                <div>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Tên tài khoản</mat-label>
+                        <input matInput formControlName="id">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Họ và tên</mat-label>
+                        <input matInput formControlName="name">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Mật khẩu</mat-label>
+                        <input matInput type="password" formControlName="password">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-radio-group formControlName="gender" aria-label="Giới tính">
+                        <mat-radio-button value="male">Nam</mat-radio-button>
+                        <mat-radio-button value="female">Nữ</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div>
+                    <button mat-raised-button color="primary">Đăng ký</button>
+                    <a routerLink="/login" mat-raised-button color="accent">Trang đăng nhập</a>
+                </div>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,29 @@
+<mat-card>
+    <mat-card-header>
+        <h1>Cập nhập thông tin tài khoản</h1>
+    </mat-card-header>
+    <mat-card-content>
+        <form class="example-form" [formGroup]="registerForm" (ngSubmit)="updateUser()">
+            <div class="container">
+                <div>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Role</mat-label>
+                        <mat-select formControlName="role">
+                            <mat-option value="">Chọn quyền truy cập</mat-option>
+                            <mat-option *ngFor="let item of rolelist" [value]="item.id">
+                                {{item.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-checkbox formControlName="isActive" class="example-margin">Is Active</mat-checkbox>
+                </div>
+                <div>
+                    <button mat-raised-button color="primary">Cập nhập</button>
+                    <a mat-dialog-close mat-raised-button color="accent">Đóng</a>
+                </div>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

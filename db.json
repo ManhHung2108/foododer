@@ -1,0 +1,86 @@
+{
+  "users": [
+    {
+      "id": "manhhung2108",
+      "name": "Đỗ Hùng",
+      "password": "Hung2108",
+      "email": "Hung@gmail.com",
+      "gender": "male",
+      "role": "staff",
+      "isActive": true
+    },
+    {
+      "id": "admin",
+      "name": "User Admin",
+      "password": "Test1234",
+      "email": "admin@in.com",
+      "gender": "male",
+      "role": "admin",
+      "isActive": true
+    },
+    {
+      "id": "admin1",
+      "name": "User Admin",
+      "password": "Test1234",
+      "email": "admin@in.com",
+      "gender": "male",
+      "role": "",
+      "isActive": true
+    },
+    {
+      "id": "admin2",
+      "name": "User Admin",
+      "password": "Test1234",
+      "email": "admin@in.com",
+      "gender": "male",
+      "role": "",
+      "isActive": true
+    },
+    {
+      "id": "admin3",
+      "name": "User Admin",
+      "password": "Test1234",
+      "email": "admin@in.com",
+      "gender": "male",
+      "role": "",
+      "isActive": true
+    },
+    {
+      "id": "admin4",
+      "name": "User Admin",
+      "password": "Test1234",
+      "email": "admin@in.com",
+      "gender": "male",
+      "role": "",
+      "isActive": true
+    },
+    {
+      "id": "admin4",
+      "name": "User Admin",
+      "password": "Test1234",
+      "email": "admin@in.com",
+      "gender": "male",
+      "role": "",
+      "isActive": true
+    },
+    {
+      "id": "ádasd",
+      "name": "áddss",
+      "password": "Test1234",
+      "email": "hung@edu.vn",
+      "gender": "male",
+      "role": "staff",
+      "isActive": false
+    }
+  ],
+  "roles": [
+    {
+      "id": "staff",
+      "name": "Staff"
+    },
+    {
+      "id": "quality",
+      "name": "Quality"
+    }
+  ]
+}
